@@ -77,3 +77,8 @@ def delete(id):
     db.session.commit()
     flash("Persona eliminada")
     return redirect(url_for("main.index"))
+
+@bp.route("/acerca/<int:id>")
+def acerca(id):
+    persona = Persona.query.get_or_404(id)
+    return render_template("about.html", persona=persona)
