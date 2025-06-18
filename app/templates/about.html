@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca de {{ persona.nombre }}{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('main.index') }}" class="btn btn-secondary mb-3">&larr; Volver</a>
+
+<div class="card shadow">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{ persona.foto_url }}" class="img-fluid rounded-start" alt="Foto de {{ persona.nombre }}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title">{{ persona.nombre }}</h3>
+                <p class="card-text"><strong>Edad:</strong> {{ persona.edad }}</p>
+                <p class="card-text"><strong>Email:</strong> {{ persona.email }}</p>
+                <p class="card-text text-muted">Esta es la vista detallada de la persona seleccionada.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
